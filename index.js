@@ -4,10 +4,16 @@ const Manager = require("./lib/Manager");
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
-const generateHTML = require("./src/utils/generateHTML");
+const {
+  generateHTML,
+  generateEngineerHTML,
+  generateInternHTML,
+  generateManagerHTML,
+} = require("./src/utils/generateHTML");
 const team = [];
 const OUTPUT_DIR = path.resolve(__dirname, "dist");
 const outputPath = path.join(OUTPUT_DIR, "index.html");
+
 const init = async () => {
   const answers = await inquirer.prompt([
     {
@@ -24,7 +30,8 @@ const init = async () => {
   } else if (answers.jobType === "Manager") {
     renderManager();
   } else {
-    writeFile();
+    team.join("");
+    writeFile(team);
   }
 };
 
@@ -57,16 +64,77 @@ const renderEngineer = async () => {
     engineerAnswers.email,
     engineerAnswers.github
   );
-  team.push(engineer);
+  const engineerHTML = generateEngineerHTML(engineer);
+  team.push(engineerHTML);
   init();
 };
 //renderIntern function goes here
-renderIntern();
+const renderIntern = async () => {
+  const internAnswers = await inquirer.prompt([
+    { type: "input", name: "name", message: "What is your intern's name?" },
+    {
+      type: "input",
+      name: "id",
+      message: "What is your intern's ID?",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is your intern's Email",
+    },
+    {
+      type: "input",
+      name: "school",
+      message: "What school did your intern attend?",
+    },
+  ]);
+  const intern = new Intern(
+    internAnswers.name,
+    internAnswers.id,
+    internAnswers.email,
+    internAnswers.school
+  );
+  const internHTML = generateInternHTML(intern);
+  team.push(internHTML);
+  init();
+};
 
 //render manager function goes here
-renderManager();
-
-const writeFile = () => {
+const renderManager = async () => {
+  const managerAnswers = await inquirer.prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "What is the manager's name?",
+    },
+    {
+      type: "input",
+      name: "id",
+      message: "What is the manager's ID?",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is you manager's Email",
+    },
+    {
+      type: "input",
+      name: "officeNumber",
+      message: "What is your manager's office number?",
+    },
+  ]);
+  const manager = new Manager(
+    managerAnswers.name,
+    managerAnswers.id,
+    managerAnswers.email,
+    managerAnswers.officeNumber
+  );
+  const managerHTML = generateManagerHTML(manager);
+  team.push(managerHTML);
+  init();
+};
+init();
+const writeFile = (team) => {
   console.log("file has been created ");
   fs.writeFileSync(outputPath, generateHTML(team), "utf-8");
 };
