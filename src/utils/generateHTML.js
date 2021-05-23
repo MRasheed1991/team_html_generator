@@ -9,8 +9,8 @@ const generateEngineerHTML = (engineer) => {
     
     <div class="px-3 py-4 border bg-light">
     <p class="card-text border p-2 m-0">Id:${engineer.id}</p>
-    <p class="card-text border p-2 m-0">email:${engineer.email}</p>
-    <p class="card-text border p-2 m-0">github: ${engineer.github}</p>
+    <p class="card-text border p-2 m-0">Email:<a href="mailto:mr.rasheed@live.co.uk" target="_blank">${engineer.email}</a></p>
+    <p class="card-text border p-2 m-0">Github:<a href="${engineer.github}" target="_blank">Click here to Visit Profile</a></p>
   </div>
     
   </div>  
@@ -27,8 +27,8 @@ const generateManagerHTML = (manager) => {
     
     <div class="px-3 py-4 border bg-light">
     <p class="card-text border p-2 m-0">Id:${manager.id}</p>
-    <p class="card-text border p-2 m-0">email:${manager.email}</p>
-    <p class="card-text border p-2 m-0">officeNumber: ${manager.officeNumber}</p>
+    <p class="card-text border p-2 m-0">Email:${manager.email}</p>
+    <p class="card-text border p-2 m-0">OfficeNumber: ${manager.officeNumber}</p>
   </div>
     
   </div>  
@@ -45,8 +45,8 @@ const generateInternHTML = (intern) => {
     
     <div class="px-3 py-4 border bg-light">
     <p class="card-text border p-2 m-0">Id:${intern.id}</p>
-    <p class="card-text border p-2 m-0">email:${intern.email}</p>
-    <p class="card-text border p-2 m-0">school: ${intern.school}</p>
+    <p class="card-text border p-2 m-0">Email:${intern.email}</p>
+    <p class="card-text border p-2 m-0">School: ${intern.school}</p>
   </div>
     
   </div>  
