@@ -1,15 +1,15 @@
-# team profile generator
+# Team Profile Generator
 
-#Description
+# Description
 
 in this Assignment i had to create a team profile generator using the node.js and the inquirer package to dynamically built the Html webpage to display the detail for each
 employer the user put the detail for.
 
-The assignment was not and i had to go through alot of issues but you don't learn from success you learn from mistakes.
+The assignment was not Easy and i had to go through a lot of issues but you don't learn from success you learn from hardship.
 
 # Marked Acceptance Criteria
 
-This was the acceptance criteria to finish this assignment.i have [x] marked all the task i have completed.
+This was the acceptance criteria to finish this assignment.i have [✔] marked all the task i have completed.
 
 - [x] WHEN I am prompted for my team members and their information
       THEN an HTML file is generated that displays a nicely formatted team roster based on user input
