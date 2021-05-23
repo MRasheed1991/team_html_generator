@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1621778182347" clover="3.2.0">
-  <project timestamp="1621778182347" name="All files">
+<coverage generated="1621792832051" clover="3.2.0">
+  <project timestamp="1621792832055" name="All files">
     <metrics statements="26" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="14" coveredmethods="8" elements="40" coveredelements="28" complexity="0" loc="26" ncloc="26" packages="1" files="4" classes="4"/>
     <file name="Employee.js" path="C:\Users\cute\coding_bootcamp\homeworks\team_html_generator\src\lib\Employee.js">
       <metrics statements="8" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="2"/>
