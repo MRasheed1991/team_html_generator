@@ -9,7 +9,7 @@ const {
   generateEngineerHTML,
   generateInternHTML,
   generateManagerHTML,
-} = require("./src/utils/generateHTML");
+} = require("./utils/generateHTML");
 const team = [];
 const OUTPUT_DIR = path.resolve(__dirname, "dist");
 const outputPath = path.join(OUTPUT_DIR, "index.html");
